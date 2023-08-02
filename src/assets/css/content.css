@@ -1121,3 +1121,157 @@
   right: -1px;
   top: -8px;
 }
+
+/* page-setting */
+#page-setting {
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+}
+#page-setting h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #11121e;
+  margin: 0 0 25px;
+  position: relative;
+  width: 1284px;
+}
+#page-setting .btn-save {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 150px;
+  height: 36px;
+  line-height: 36px;
+  display: block;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #000;
+}
+#page-setting section {
+  border-radius: 14px;
+  background: #fff;
+  width: 1284px;
+  margin-bottom: 20px;
+  padding: 24px 80px;
+}
+#page-setting .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 1284px;
+}
+#page-setting h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  padding: 0 0 15px;
+  border-bottom: 1px solid #e9e9e9;
+  margin: 0 0 20px;
+}
+#page-setting .system-box {
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+}
+#page-setting .system-box li {
+  flex: 0 0 30%;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#page-setting .system-box h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 20px;
+}
+#page-setting .system-box .badge-ok {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #868788;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #868788;
+  border-radius: 30px;
+  min-width: 100px;
+  height: 28px;
+  text-align: center;
+  padding-top: 6px;
+}
+#page-setting .system-box .info-id,
+#page-setting .system-box .info-pw {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  height: 30px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+#page-setting .system-box input[type=text],
+#page-setting .system-box input[type=password] {
+  width: 100%;
+  border-radius: 6px;
+  background: #f3f3f3;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+}
+#page-setting .system-box .btn-login,
+#page-setting .system-box .btn-logout {
+  font-size: 14px;
+  font-weight: 500;
+  height: 30px;
+  line-height: 28px;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+}
+#page-setting .system-box .btn-logout {
+  background-color: #f3f3f3;
+  color: #acacac;
+}
+#page-setting .system-box .btn-login {
+  background-color: #acacac;
+  color: #fff;
+}
+
+#page-setting .ho li {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border-radius: 10px;
+  height: 44px;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+#page-setting .ho li .col {
+  background: #f3f3f3;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: #000;
+}
+#page-setting .ho li .name {
+  flex: 1 0 660px;
+}
+#page-setting .ho li .create {
+  flex: 0 0 220px;
+}
+#page-setting .ho li .edit {
+  flex: 0 0 145px;
+}
+#page-setting .ho li .del {
+  flex: 0 0 90px;
+}
+#page-setting .ho li.title .col {
+  color: #868788;
+  font-size: 500;
+}
+
+
