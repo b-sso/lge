@@ -45,8 +45,8 @@ const DashboardList = () => {
             </div>
           </div>
           <div className="right">
-            <div className="time"><span className="addon">Time</span>00:00:00</div> {/* FIXME: 5분 이하 남았을 경우 on 추가 <div className="time limit"> */}
-            <div className="btn-hide"></div> {/* FIXME: 숨김상태면 on 추가 <div className="hidden on">*/}
+            <div className="time"><span className="addon">Time</span>00:00:00</div> {/* FIXME: 5분 이하 남았을 경우 on 추가 <div className="time on"> */}
+            <div className="btn-hide"></div> {/* FIXME: 숨김상태면 on 추가 <div className="btn-hide on">*/}
           </div>
           <span className="btn-toggle" onClick={() => setIsBundleOpen(!isBundleOpen)}></span>
         </div>

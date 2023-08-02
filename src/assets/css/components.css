@@ -346,7 +346,7 @@
 .comp-chart .count .current {
   font-size: 31px;
   font-weight: 600;
-  margin-right: 3px;
+  margin-right: 1px;
 }
 .comp-chart .count .total {
   color: #868788;
@@ -354,7 +354,7 @@
 }
 .comp-chart .count .total:before {
   content: '/';
-  margin-right: 2px;
+  margin-right: 1px;
 }
 
 /* comp-select */

@@ -1,64 +1,68 @@
 import React, { useRef, useState } from 'react';
+
 import WidgetProjector from '../../components/widget/Projector';
 import WidgetDisplay from '../../components/widget/Display';
+import WidgetLighting from '../../components/widget/Lighting';
+import WidgetConditioner from '../../components/widget/Conditioner';
+import WidgetPurifier from '../../components/widget/Purifier';
+import WidgetGolf from '../../components/widget/Golf';
+import WidgetStyler from '../../components/widget/Styler';
 
 const DashboardCard = () => {
-  const card = useRef(null);
+  const bundle = useRef(null);
 
-  const [isChecked, setIsChecked] = useState(false);
+	const [isBundleWork, setIsBundleWork] = useState(false);
 	const handleChkClick = (event) => {
-    setIsChecked(event.target.checked);
+    setIsBundleWork(event.target.checked);
   };
 
-  const [hoveredItem, setHoveredItem] = useState(null);
-  const showHover = (item) => {
-    setHoveredItem(item);
-    card.current.classList.add('hidden');
+  const [isOpenWidget, setIsOpenWidget] = useState(null);
+  const handleWidgetClick = (item) => {
+    setIsOpenWidget(item);
+    bundle.current.classList.add('active');
   };
-
-  const backClick = () => {
-    if (hoveredItem) {
-      setHoveredItem(null)
-      card.current.classList.remove('hidden');
+  const handleBackClick = () => {
+    if (isOpenWidget) {
+      setIsOpenWidget(null)
+      bundle.current.classList.remove('active');
     }
   };
 
   return (
   <div className="dashboard-card">
     <ul>
-      <li className="bundle" ref={card}>
-        <div className="control">
-          <div className="anchor">
-            {hoveredItem ? (
-              <span className="btn-back" onClick={backClick}>뒤로</span>
-            ) : (
-              <span className="num">VIP Room1</span>
-            )}
-          </div>
-          <div className={`comp-onoff ${isChecked ? 'checked' : ''}`}>
-            <label data-off="out" data-on="in">
-              <input type="checkbox" name="" checked={isChecked} onChange={handleChkClick} />
-              <span className="round"></span>
-            </label>
-          </div>
-        </div>
-        <div className="original">
-          <div className="bar">
-            <div className="time"><span className="addon">Time</span>00:00:00</div>
-            <div className="hidden"></div>
+      <li className={`bundle ${isBundleWork ? 'status-in' : 'status-out'}`} ref={bundle}>
+        <span className="num">Room 000</span>
+        {isOpenWidget && ( <span className="btn-back" onClick={handleBackClick}></span> )}
+        <div className="fold">
+          <div className="time-bar">
+            <div className={`comp-onoff ${isBundleWork ? 'checked' : ''}`}>
+              <label data-off="out" data-on="in">
+                <input type="checkbox" name="" checked={isBundleWork} onChange={handleChkClick} />
+                <span className="round"></span>
+              </label>
+            </div>
+            <div className="time"><span className="addon">Time</span>00:00:00</div> {/* FIXME: 5분 이하 남았을 경우 on 추가 <div className="time on"> */}
+            <div className="btn-hide"></div> {/* FIXME: 숨김상태면 on 추가 <div className="btn-hide on">*/}
           </div>
           <ul>
-            <li onClick={() => showHover('project')}><span className="device-icon type-projector"></span></li>
-            <li onClick={() => showHover('display')}><span className="device-icon type-display on error"></span></li>
-            <li><span className="device-icon type-lighting error"></span></li>
-            <li><span className="device-icon type-conditioner"></span></li>
-            <li><span className="device-icon type-purifier"></span></li>
-            <li><span className="device-icon type-golf"></span></li>
-            <li><span className="device-icon type-styler"></span></li>
+            {/* FIXME: 활성화 된 상태면 on 클래스 추가 / 에러 발생시 error 클래스 추가 <span className="device-icon type-projector on error"></span> */}
+            <li onClick={() => handleWidgetClick('project')}><span className="device-icon type-projector"></span></li>
+            <li onClick={() => handleWidgetClick('display')}><span className="device-icon type-display"></span></li>
+            <li onClick={() => handleWidgetClick('conditioner')}><span className="device-icon type-conditioner"></span></li>
+            <li onClick={() => handleWidgetClick('purifier')}><span className="device-icon type-purifier"></span></li>
+            <li onClick={() => handleWidgetClick('styler')}><span className="device-icon type-styler"></span></li>
+            <li onClick={() => handleWidgetClick('golf')}><span className="device-icon type-golf"></span></li>
+            <li onClick={() => handleWidgetClick('lighting')}><span className="device-icon type-lighting"></span></li>
           </ul>
         </div>
-        {hoveredItem === 'project' && <WidgetProjector />}
-        {hoveredItem === 'display' && <WidgetDisplay />}
+        {isOpenWidget === 'project' && <WidgetProjector />}
+        {isOpenWidget === 'display' && <WidgetDisplay />}
+        {isOpenWidget === 'conditioner' && <WidgetConditioner />}
+        {isOpenWidget === 'purifier' && <WidgetPurifier />}
+        {isOpenWidget === 'styler' && <WidgetStyler />}
+        {isOpenWidget === 'golf' && <WidgetGolf />}
+        {isOpenWidget === 'lighting' && <WidgetLighting />}
       </li>
     </ul>
   </div>

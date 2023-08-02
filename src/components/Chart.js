@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 
-const Chart = ({ id, dashArrayValue, type, current, total }) => {
+const Chart = ({ id, value, type, current, total }) => {
   useEffect(() => {
-    const updateDashArray = () => {
+    const updateValue = () => {
       const circlePath = document.getElementById(id);
-      circlePath.setAttribute('stroke-dasharray', dashArrayValue);
+      circlePath.setAttribute('stroke-dasharray', value);
     };
 
-    updateDashArray();
-  }, [id, dashArrayValue]);
+    updateValue();
+  }, [id, value]);
 
   return (
     <div className={`comp-chart ${type}`}>
@@ -22,7 +22,6 @@ const Chart = ({ id, dashArrayValue, type, current, total }) => {
         <span className="total">{total}</span>
       </div>
     </div>
-    
   );
 }
 

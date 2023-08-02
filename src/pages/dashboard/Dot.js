@@ -1,64 +1,38 @@
-import React, { useRef, useState } from 'react';
-
 const DashboardDot = () => {
   return (
   <div className="dashboard-dot">
+    {/* FIXME: 입실상태 : in, 퇴실상태 : out, 에러상태 : error */}
     <ul>
-      <li className="status-error status-on status-off status-limit">
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
+      {/* case1 : 입실 */}
+      <li className="in">
+        <div className="num">Room 000</div>
+        <div className="time">00:00:00</div>
       </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
+      {/* case2 : 입실 + 시간제한 */}
+      <li className="in">
+        <div className="num">Room 000</div>
+        {/* FIXME: 시간이 5분 이하일 경우 on 추가 */}
+        <div className="time on">00:00:00</div>
       </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
+      {/* case3 : 입실 + 에러*/}
+      <li className="in error">
+        <div className="num">Room 000</div>
+        <div className="time">00:00:00</div>
       </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
+      {/* case4 : 입실 + 에러 + 시간제한 */}
+      <li className="in error">
+        <div className="num">Room 000</div>
+        <div className="time on">00:00:00</div>
       </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
+      {/* case5 : 퇴실 */}
+      <li className="out">
+        <div className="num">Room 000</div>
+        <div className="time">00:00:00</div>
       </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
-      </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
-      </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
-      </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
-      </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
-      </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
-      </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
-      </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
-      </li>
-      <li>
-        <span className="num">1</span>
-        <span className="time">00:00:00</span>
+      {/* case6 : 퇴실 + 에러 */}
+      <li className="out error">
+        <div className="num">Room 000</div>
+        <div className="time">00:00:00</div>
       </li>
     </ul>
   </div>

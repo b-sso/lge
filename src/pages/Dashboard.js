@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-import List from "./dashboard/List";
-import Card from "./dashboard/Card";
-import Dot from "./dashboard/Dot";
+import DisplayList from "./dashboard/List";
+import DisplayCard from "./dashboard/Card";
+import DisplayDot from "./dashboard/Dot";
 import Chart from "../components/Chart";
 
 const Dashboard = () => {
-  const [activeTabType, setActiveTabType] = useState('list');
-  const handleTabClickType = (item) => {
-    setActiveTabType(item);
+  const [activeDisplayType, setActiveDisplayType] = useState('list');
+  const handleDisplayClick = (item) => {
+    setActiveDisplayType(item);
   };
 
   return (
@@ -22,13 +22,13 @@ const Dashboard = () => {
           <li>
             <div className="chart-box">
               <h3>Room</h3>
-              <Chart id="chart1" dashArrayValue="80, 100" type="type-room" current={40} total={50} />
+              <Chart id="chart1" value="80, 100" type="type-room" current={40} total={50} />
             </div>
           </li>
           <li>
             <div className="chart-box">
               <h3>Bay</h3>
-              <Chart id="chart2" dashArrayValue="20, 100" type="type-bay" current={10} total={50} />
+              <Chart id="chart2" value="20, 100" type="type-bay" current={10} total={50} />
             </div>
           </li>
           <li>
@@ -91,9 +91,9 @@ const Dashboard = () => {
           <li><a href="">by Device Error</a></li>
         </ul>
         <ul className="display">
-          <li className={`type-list ${activeTabType === 'list' ? 'active' : ''}`} onClick={() => handleTabClickType('list')}></li>
-          <li className={`type-card ${activeTabType === 'card' ? 'active' : ''}`} onClick={() => handleTabClickType('card')}></li>
-          <li className={`type-dot ${activeTabType === 'dot' ? 'active' : ''}`} onClick={() => handleTabClickType('dot')}></li>
+          <li className={`type-list ${activeDisplayType === 'list' ? 'active' : ''}`} onClick={() => handleDisplayClick('list')}></li>
+          <li className={`type-card ${activeDisplayType === 'card' ? 'active' : ''}`} onClick={() => handleDisplayClick('card')}></li>
+          <li className={`type-dot ${activeDisplayType === 'dot' ? 'active' : ''}`} onClick={() => handleDisplayClick('dot')}></li>
         </ul>
         <select name="" className="comp-select type-big">
           <option value="">All</option>
@@ -101,9 +101,9 @@ const Dashboard = () => {
           <option value="">숨긴 룸 보기</option>
         </select>
       </div>
-      {activeTabType === 'list' && <List />}
-      {activeTabType === 'dot' && <Dot />}
-      {activeTabType === 'card' && <Card />}
+      {activeDisplayType === 'list' && <DisplayList />}
+      {activeDisplayType === 'dot' && <DisplayDot />}
+      {activeDisplayType === 'card' && <DisplayCard />}
     </section>
   </div>
   );
