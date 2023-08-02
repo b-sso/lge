@@ -378,11 +378,6 @@ header .work a.active {
 }
 
 /* column-widget */
-.column-comm h2 {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--black-to-white);
-}
 .column-comm .slider-wrap {
   height: 1010px;
   position: relative;

@@ -124,10 +124,9 @@ iframe {
 }
 
 /* placeholder */
-::-webkit-input-placeholder,
-:-moz-placeholder,
-::-moz-placeholder,
-::placeholder {
-	color: #818181;
+input::placeholder,
+textarea::placeholder {
+  color: #c2c4c5;
 	font-weight: 300;
+	font-size: 14px;
 }

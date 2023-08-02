@@ -7,7 +7,7 @@ const Setting = ({ mode, onModeChange }) => {
       </h2>
       <section className="sec-system">
         <h3>Login intergration</h3>
-        <ul className="system-box">
+        <ul>
           <li>
             <h4>System 00</h4>
             <span className="badge-ok">Connected</span>
@@ -30,47 +30,43 @@ const Setting = ({ mode, onModeChange }) => {
       <div className="row">
         <section className="sec-lang">
           <h3>Language</h3>
-          <div className="inner">
-            <div className="comp-radio">
-              <label><input type="radio" name="lang" />English</label>
-            </div>
-            <div className="comp-radio">
-              <label><input type="radio" name="lang" />Korean</label>
-            </div>
+          <div className="comp-radio">
+            <label><input type="radio" name="lang" checked /><span>English</span></label>
+          </div>
+          <div className="comp-radio">
+            <label><input type="radio" name="lang" /><span>Korean</span></label>
           </div>
         </section>
         <section className="sec-theme">
           <h3>Screen Theme</h3>
-          <div className="inner">
-            <div className="comp-radio">
-              <label><input type="radio" name="mode" value="1" checked={mode === '1'} onChange={() => onModeChange('1')} />White Mode</label>
-            </div>
-            <div className="comp-radio">
-              <label><input type="radio" name="mode" value="2" checked={mode === '2'} onChange={() => onModeChange('2')} />Dark Mode</label>
-            </div>
+          <div className="comp-radio">
+            <label><input type="radio" name="mode" value="1" checked={mode === '1'} onChange={() => onModeChange('1')} /><span>Light mode</span></label>
+          </div>
+          <div className="comp-radio">
+            <label><input type="radio" name="mode" value="2" checked={mode === '2'} onChange={() => onModeChange('2')} /><span>Dark mode</span></label>
           </div>
         </section>
       </div>
       <section className="sec-room">
         <h3>Room/Bay</h3>
-        <div className="ho">
+        <div className="view">
           <h4>View Type</h4>
           <div className="comp-radio">
-            <label><input type="radio" name="view" />Single</label>
+            <label><input type="radio" name="view" /><span>Single</span></label>
           </div>
           <div className="comp-radio">
-            <label><input type="radio" name="view" />Mixed</label>
+            <label><input type="radio" name="view" checked /><span>Mixed</span></label>
           </div>
         </div>
-        <div className="ho">
-          <h4>Setting</h4>
-          <div className="bar">
+        <div className="list">
+          <h4>Settings</h4>
+          <div className="control-bar">
             <select name="" className="comp-select">
               <option value="">Room</option>
             </select>
             <div className="search">
               <input type="text" name="" placeholder="Search This View" />
-              <button type="submit" name="" className="btn-search">찾기</button>
+              <button type="submit" name="" className="btn-search"></button>
             </div>
             <a href="" className="btn-add">add</a>
           </div>

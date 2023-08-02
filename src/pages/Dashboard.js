@@ -95,7 +95,7 @@ const Dashboard = () => {
           <li className={`type-card ${activeDisplayType === 'card' ? 'active' : ''}`} onClick={() => handleDisplayClick('card')}></li>
           <li className={`type-dot ${activeDisplayType === 'dot' ? 'active' : ''}`} onClick={() => handleDisplayClick('dot')}></li>
         </ul>
-        <select name="" className="comp-select type-big">
+        <select name="" className="comp-select">
           <option value="">All</option>
           <option value="">nn개</option>
           <option value="">숨긴 룸 보기</option>

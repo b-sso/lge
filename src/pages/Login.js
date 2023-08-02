@@ -1,7 +1,23 @@
 const Login = () => {
   return (
   <div id="page-login">
-    login page
+    <form name="" action="">
+      <div className="box">
+        <h2>Login</h2>
+        <h3>Sports Entertainment System</h3>
+        <div className="input type-id">
+          <input type="text" name="" placeholder="Please enter your email address" />
+        </div>
+        <div className="input type-pw">
+          <input type="password" name="" placeholder="Please enter your password" />
+        </div>
+        <div className="guide">
+          If you have lost your password,<br />
+          please contact the administrator at lgeadmin@lge.co.kr
+        </div>
+        <button type="submit" className="btn-login">Login</button>
+      </div>
+    </form>
   </div>
 );
 };
