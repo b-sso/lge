@@ -13,6 +13,12 @@ const Purifier = () => {
 			<div className="content">
 				<div className="status">
 					<h4>Overall Air Quaility</h4>
+					{/* FIXME: 상태에 따라 클래스 및 텍스트 변경
+						* good : <span className="current type-good">GOOD</span>
+						* normal : <span className="current type-normal">NORMAL</span>
+						* bad : <span className="current type-bad">BAD</span>
+						* worst : <span className="current type-worst">VERY BAD</span>
+					*/}
 					<span className="current type-good">GOOD</span>
 				</div>
 				<div class="select-row">

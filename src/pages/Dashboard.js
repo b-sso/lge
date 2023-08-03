@@ -15,7 +15,7 @@ const Dashboard = () => {
   <div id="page-dashboard">
     <section className="sec-status">
       <h2>Status</h2>
-      <div className="slider-wrap">
+      <div className="slider-wrap"> {/* FIXME: 4개 이상일 때 active 클래스가 추가되고 슬라이드 작동 <div className="slider-wrap active">*/}
         {/* FIXME: 클릭 시 이전으로, 마지막이면 end 클래스 추가 */}
         <a href="" className="btn-slider-prev end"></a>
         <ul>
@@ -97,8 +97,6 @@ const Dashboard = () => {
         </ul>
         <select name="" className="comp-select">
           <option value="">All</option>
-          <option value="">nn개</option>
-          <option value="">숨긴 룸 보기</option>
         </select>
       </div>
       {activeDisplayType === 'list' && <DisplayList />}

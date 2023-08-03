@@ -3,7 +3,7 @@ const Setting = ({ mode, onModeChange }) => {
     <div id="page-setting">
       <h2>
         Setting
-        <button type="submit" name="" class="btn-save">Setup complete</button>
+        <button type="submit" name="" class="btn-save" disabled>Setup complete</button> {/* FIXME: 입력하지 않으면 disabled */}
       </h2>
       <section className="sec-system">
         <h3>Login intergration</h3>
@@ -25,13 +25,21 @@ const Setting = ({ mode, onModeChange }) => {
               <button type="submit" name="" className="btn-login">Login</button>
             </form>
           </li>
+          <li>
+            <h4>System 00</h4>
+            <form name="" action="">
+              <input type="text" name="" placeholder="Enter your ID" />
+              <input type="password" name="" placeholder="Enter your PW" />
+              <button type="submit" name="" className="btn-login" disabled>Login</button> {/* FIXME: 입력하지 않으면 disabled */}
+            </form>
+          </li>
         </ul>
       </section>
       <div className="row">
         <section className="sec-lang">
           <h3>Language</h3>
           <div className="comp-radio">
-            <label><input type="radio" name="lang" checked /><span>English</span></label>
+            <label><input type="radio" name="lang" checked  /><span>English</span></label>
           </div>
           <div className="comp-radio">
             <label><input type="radio" name="lang" /><span>Korean</span></label>
@@ -58,7 +66,7 @@ const Setting = ({ mode, onModeChange }) => {
             <label><input type="radio" name="view" checked /><span>Mixed</span></label>
           </div>
         </div>
-        <div className="list">
+        <div className="data">
           <h4>Settings</h4>
           <div className="control-bar">
             <select name="" className="comp-select">
@@ -70,13 +78,15 @@ const Setting = ({ mode, onModeChange }) => {
             </div>
             <a href="" className="btn-add">add</a>
           </div>
-          <ul>
-            <li className="title">
+          <ul className="layout title">
+            <li>
               <div className="col name">Name</div>
               <div className="col create">Created On</div>
               <div className="col edit">Edit</div>
               <div className="col del">Delete</div>
             </li>
+          </ul>
+          <ul className="layout list">
             <li>
               <div className="col name">Room 000</div>
               <div className="col create">20/06/2023</div>
@@ -87,7 +97,36 @@ const Setting = ({ mode, onModeChange }) => {
                 <a href="" className="btn-del"></a>
               </div>
             </li>
+            {/* FIXME: 수정 상태면 status-edit 클래스 추가 */}
+            <li className="status-edit">
+              <div className="col name"><input type="text" name="" /></div>
+              <div className="col create">20/06/2023</div>
+              <div className="col edit">
+                <a href="" className="btn-ok">OK</a>
+              </div>
+              <div className="col del">
+                <a href="" className="btn-del"></a>
+              </div>
+            </li>
           </ul>
+          <div class="pagination">
+            <a href="" class="first"></a>
+            <a href="" class="prev"></a>
+            <div class="nums">
+              <strong>1</strong>
+              <a href="">2</a>
+              <a href="">3</a>
+              <a href="">4</a>
+              <a href="">5</a>
+              <a href="">6</a>
+              <a href="">7</a>
+              <a href="">8</a>
+              <a href="">9</a>
+              <a href="">10</a>
+            </div>
+            <a href="" class="next"></a>
+            <a href="" class="last"></a>
+          </div>
         </div>
       </section>
     </div>

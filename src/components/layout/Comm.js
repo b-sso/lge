@@ -1,6 +1,7 @@
 import WidgetDisplay from '../widget/Display';
 import WidgetPurifier from '../widget/Purifier';
 import WidgetConditioner from '../widget/Conditioner';
+import WidgetRobot from '../widget/Robot';
 
 const Comm = () => {
   const robotStatus = {
@@ -13,7 +14,7 @@ const Comm = () => {
   return (
     <div className="column-comm">
       <h2>Common area</h2>
-      <div className="slider-wrap">
+      <div className="slider-wrap"> {/* FIXME: 4개 이상일 때 active 클래스가 추가되고 슬라이드 작동 <div className="slider-wrap active">*/}
         {/* FIXME: 클릭 시 이전으로, 마지막이면 end 클래스 추가 */}
         <a href="" className="btn-slider-prev end"></a>
         <ul>
@@ -45,18 +46,22 @@ const Comm = () => {
               <a href="/robots" className="link-control">Control</a>
             </div>
           </li>
+          {/* FIXME: 로봇이 한 개인 경우 */}
+          <li className="comm-box comm-robot-only">
+            <WidgetRobot battery={100} type="arrive" />
+          </li>
           <li>
-            <div class="comm-box comm-display">
+            <div className="comm-box comm-display">
               <WidgetDisplay />
             </div>
           </li>
           <li>
-            <div class="comm-box comm-purifier">
+            <div className="comm-box comm-purifier">
               <WidgetPurifier />
             </div>
           </li>
           <li>
-            <div class="comm-box comm-conditioner">
+            <div className="comm-box comm-conditioner">
               <WidgetConditioner />
             </div>
           </li>

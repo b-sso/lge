@@ -45,16 +45,18 @@ const DashboardCard = () => {
             <div className="time"><span className="addon">Time</span>00:00:00</div> {/* FIXME: 5분 이하 남았을 경우 on 추가 <div className="time on"> */}
             <div className="btn-hide"></div> {/* FIXME: 숨김상태면 on 추가 <div className="btn-hide on">*/}
           </div>
-          <ul>
-            {/* FIXME: 활성화 된 상태면 on 클래스 추가 / 에러 발생시 error 클래스 추가 <span className="device-icon type-projector on error"></span> */}
-            <li onClick={() => handleWidgetClick('project')}><span className="device-icon type-projector"></span></li>
-            <li onClick={() => handleWidgetClick('display')}><span className="device-icon type-display"></span></li>
-            <li onClick={() => handleWidgetClick('conditioner')}><span className="device-icon type-conditioner"></span></li>
-            <li onClick={() => handleWidgetClick('purifier')}><span className="device-icon type-purifier"></span></li>
-            <li onClick={() => handleWidgetClick('styler')}><span className="device-icon type-styler"></span></li>
-            <li onClick={() => handleWidgetClick('golf')}><span className="device-icon type-golf"></span></li>
-            <li onClick={() => handleWidgetClick('lighting')}><span className="device-icon type-lighting"></span></li>
-          </ul>
+          <div className="scroll">
+            <ul>
+              {/* FIXME: 활성화 된 상태면 on 클래스 추가 / 에러 발생시 error 클래스 추가 <span className="device-icon type-projector on error"></span> */}
+              <li onClick={() => handleWidgetClick('project')}><span className="device-icon type-projector"></span></li>
+              <li onClick={() => handleWidgetClick('display')}><span className="device-icon type-display"></span></li>
+              <li onClick={() => handleWidgetClick('conditioner')}><span className="device-icon type-conditioner"></span></li>
+              <li onClick={() => handleWidgetClick('purifier')}><span className="device-icon type-purifier"></span></li>
+              <li onClick={() => handleWidgetClick('styler')}><span className="device-icon type-styler"></span></li>
+              <li onClick={() => handleWidgetClick('golf')}><span className="device-icon type-golf"></span></li>
+              <li onClick={() => handleWidgetClick('lighting')}><span className="device-icon type-lighting"></span></li>
+            </ul>
+          </div>
         </div>
         {isOpenWidget === 'project' && <WidgetProjector />}
         {isOpenWidget === 'display' && <WidgetDisplay />}

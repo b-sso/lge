@@ -13,7 +13,7 @@ const Login = () => {
         </div>
         <div className="guide">
           If you have lost your password,<br />
-          please contact the administrator at lgeadmin@lge.co.kr
+          please contact the administrator at <a href="mailto:lgeadmin@lge.co.kr">lgeadmin@lge.co.kr</a>
         </div>
         <button type="submit" className="btn-login">Login</button>
       </div>
