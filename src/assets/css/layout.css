@@ -62,19 +62,19 @@
 }
 .column-content {
   margin-left: 216px;
-  margin-right: 380px;
+  margin-right: 370px;
   max-width: 1704px;
   /* min-height: 1080px; */
 }
 .column-comm {
-  width: 400px;
+  width: 390px;
   right: 0;
   top: 90px;
   position: fixed;
   z-index: 10;
   background: var(--column-bg-color);
   padding-right: 30px;
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 /* nav */
