@@ -4,13 +4,15 @@ import WidgetConditioner from '../widget/Conditioner';
 import WidgetRobot from '../widget/Robot';
 
 const Comm = () => {
-  const robotStatus = {
-    height: '30%'
+  const example = {
+    height: '50%'
   };
-  const robotStatus2 = {
-    height: '90%'
+  const example2 = {
+    height: '100%'
   };
-
+  const example3 = {
+    height: '10%'
+  };
   return (
     <div className="column-comm">
       <h2>Common area</h2>
@@ -28,18 +30,24 @@ const Comm = () => {
                 <ul>
                   <li>
                     <h4>in use</h4>
-                    <div className="count">15</div>
-                    <div className="status" style={robotStatus}></div>
+                    <div className="status">
+                      <div className="count">50</div>
+                      <div className="current" style={example}></div>
+                    </div>
                   </li>
                   <li>
                     <h4>charging</h4>
-                    <div className="count">15</div>
-                    <div className="status" style={robotStatus2}></div>
+                    <div className="status">
+                      <div className="count">100</div>
+                      <div className="current" style={example2}></div>
+                    </div>
                   </li>
                   <li>
                     <h4>check</h4>
-                    <div className="count">15</div>
-                    <div className="status" style={robotStatus}></div>
+                    <div className="status">
+                      <div className="count">10</div>
+                      <div className="current" style={example3}></div>
+                    </div>
                   </li>
                 </ul>
               </div>
