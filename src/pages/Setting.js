@@ -1,20 +1,29 @@
+import React from 'react';
+import stringTable, { useLanguage } from '../Lang';
+
 const Setting = ({ mode, onModeChange }) => {
+  const { lang, handleLangChange } = useLanguage();
+
+  const handleChange = (event) => {
+    handleLangChange(event.target.value);
+  };
+
   return (
     <div id="page-setting">
       <h2>
-        Setting
+        {stringTable[lang].setting}
         <button type="submit" name="" class="btn-save" disabled>Setup complete</button> {/* FIXME: 입력하지 않으면 disabled */}
       </h2>
       <section className="sec-system">
-        <h3>Login intergration</h3>
+        <h3>{stringTable[lang].loginTitle}</h3>
         <ul>
           <li>
             <h4>System 00</h4>
-            <span className="badge-ok">Connected</span>
+            <span className="badge-ok">{stringTable[lang].connected}</span>
             <div className="info">
               <div className="info-id">te*****</div>
               <div className="info-pw">*****</div>
-              <a href="" className="btn-logout">Logout</a>
+              <a href="" className="btn-logout">{stringTable[lang].logout}</a>
             </div>
           </li>
           <li>
@@ -22,7 +31,7 @@ const Setting = ({ mode, onModeChange }) => {
             <form name="" action="">
               <input type="text" name="" placeholder="Enter your ID" />
               <input type="password" name="" placeholder="Enter your PW" />
-              <button type="submit" name="" className="btn-login">Login</button>
+              <button type="submit" name="" className="btn-login">{stringTable[lang].login}</button>
             </form>
           </li>
           <li>
@@ -30,23 +39,23 @@ const Setting = ({ mode, onModeChange }) => {
             <form name="" action="">
               <input type="text" name="" placeholder="Enter your ID" />
               <input type="password" name="" placeholder="Enter your PW" />
-              <button type="submit" name="" className="btn-login" disabled>Login</button> {/* FIXME: 입력하지 않으면 disabled */}
+              <button type="submit" name="" className="btn-login" disabled>{stringTable[lang].login}</button> {/* FIXME: 입력하지 않으면 disabled */}
             </form>
           </li>
         </ul>
       </section>
       <div className="row">
         <section className="sec-lang">
-          <h3>Language</h3>
+          <h3>{stringTable[lang].lang}</h3>
           <div className="comp-radio">
-            <label><input type="radio" name="lang" checked  /><span>English</span></label>
+            <label><input type="radio" name="lang" value="en" checked={lang === 'en'} onChange={handleChange} /><span>English</span></label>
           </div>
           <div className="comp-radio">
-            <label><input type="radio" name="lang" /><span>Korean</span></label>
+            <label><input type="radio" name="lang" value="ko" checked={lang === 'ko'} onChange={handleChange} /><span>Korean</span></label>
           </div>
         </section>
         <section className="sec-theme">
-          <h3>Screen Theme</h3>
+          <h3>{stringTable[lang].theme}</h3>
           <div className="comp-radio">
             <label><input type="radio" name="mode" value="1" checked={mode === '1'} onChange={() => onModeChange('1')} /><span>Light mode</span></label>
           </div>
@@ -56,7 +65,7 @@ const Setting = ({ mode, onModeChange }) => {
         </section>
       </div>
       <section className="sec-room">
-        <h3>Room/Bay</h3>
+        <h3>{stringTable[lang].room}/{stringTable[lang].bay}</h3>
         <div className="view">
           <h4>View Type</h4>
           <div className="comp-radio">
@@ -70,7 +79,7 @@ const Setting = ({ mode, onModeChange }) => {
           <h4>Settings</h4>
           <div className="control-bar">
             <select name="" className="comp-select">
-              <option value="">Room</option>
+              <option value="">{stringTable[lang].roomTitle}</option>
             </select>
             <div className="search">
               <input type="text" name="" placeholder="Search This View" />

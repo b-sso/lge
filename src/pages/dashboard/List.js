@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import stringTable, { useLanguage } from '../../Lang';
 
 import WidgetProjector from '../../components/widget/Projector';
 import WidgetDisplay from '../../components/widget/Display';
@@ -9,6 +10,8 @@ import WidgetGolf from '../../components/widget/Golf';
 import WidgetStyler from '../../components/widget/Styler';
 
 const DashboardList = () => {
+  const { lang } = useLanguage();
+
   const [isBundleOpen, setIsBundleOpen] = useState(true);
 	const [isBundleWork, setIsBundleWork] = useState(false);
 	const handleChkClick = (event) => {
@@ -25,7 +28,7 @@ const DashboardList = () => {
             <div className="num">Room 000</div>
             <div className="use">
               <div className={`comp-onoff ${isBundleWork ? 'checked' : ''}`}>
-                <label data-off="out" data-on="in">
+                <label data-off={`${stringTable[lang].toggleOut}`} data-on={`${stringTable[lang].toggleIn}`}>
                   <input type="checkbox" name="" checked={isBundleWork} onChange={handleChkClick} />
                   <span className="round"></span>
                 </label>

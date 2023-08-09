@@ -186,9 +186,9 @@
 .comp-range .bar {
   font-size: 12px;
   font-weight: 400;
-  color: #000;
   margin-bottom: -1px;
   position: relative;
+  color: var(--black-to-white);
 }
 .comp-range .bar .current {
   font-size: 18px;
@@ -227,6 +227,10 @@
 .widget .comp-range input[type="range"] {
   --thumb-height: 15px;
 }
+.column-global.mode-dark .comp-range input[type="range"] {
+  --track-color: #5b5b5b;
+}
+
   /* -- webkit */
 .comp-range input[type="range"],
 .comp-range input[type="range"]::-webkit-slider-runnable-track,

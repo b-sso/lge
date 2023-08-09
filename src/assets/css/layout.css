@@ -260,6 +260,7 @@ nav .etc a {
   height: 18px;
   margin-bottom: 30px;
   color: #868788;
+  text-align: left;
 }
 nav .etc a:last-child {
   margin-bottom: 0;

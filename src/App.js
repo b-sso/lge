@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-
+import { LanguageProvider } from './Lang';
 import './assets/css/content.css';
 import Header from './components/layout/Header';
 import Navi from './components/layout/Navi';
@@ -20,28 +20,30 @@ function App() {
   const isLoginPage = location.pathname === '/login';
 
   return (
-      <div className={`column-global ${mode === '2' ? 'mode-dark' : ''}`}>
-        {isLoginPage ? (
-        <Login />
-        ) : (
-        <>
-          <div className="column-navi">
-            <Navi />
-          </div>
-          <Header />
-          <div className="column-content">
-            <main>
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/setting" element={<Setting mode={mode} onModeChange={handleModeChange} />} />
-                <Route path="/robots" element={<Robots />} />
-              </Routes>
-            </main>
-          </div>
-          <Comm />
-        </>
-      )}
-    </div>
+      <LanguageProvider>
+        <div className={`column-global ${mode === '2' ? 'mode-dark' : ''}`}>
+          {isLoginPage ? (
+          <Login />
+          ) : (
+          <>
+            <div className="column-navi">
+              <Navi />
+            </div>
+            <Header />
+            <div className="column-content">
+              <main>
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/setting" element={<Setting mode={mode} onModeChange={handleModeChange} />} />
+                  <Route path="/robots" element={<Robots />} />
+                </Routes>
+              </main>
+            </div>
+            <Comm />
+          </>
+        )}
+      </div>
+    </LanguageProvider>
   );
 }
 

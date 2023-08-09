@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+import stringTable, { useLanguage } from '../Lang';
 
 import DisplayList from "./dashboard/List";
 import DisplayCard from "./dashboard/Card";
@@ -6,6 +7,8 @@ import DisplayDot from "./dashboard/Dot";
 import Chart from "../components/Chart";
 
 const Dashboard = () => {
+  const { lang } = useLanguage();
+
   const [activeDisplayType, setActiveDisplayType] = useState('list');
   const handleDisplayClick = (item) => {
     setActiveDisplayType(item);
@@ -14,57 +17,57 @@ const Dashboard = () => {
   return (
   <div id="page-dashboard">
     <section className="sec-status">
-      <h2>Status</h2>
+      <h2>{stringTable[lang].statusTitle}</h2>
       <div className="slider-wrap"> {/* FIXME: 4개 이상일 때 active 클래스가 추가되고 슬라이드 작동 <div className="slider-wrap active">*/}
         {/* FIXME: 클릭 시 이전으로, 마지막이면 end 클래스 추가 */}
         <a href="" className="btn-slider-prev end"></a>
         <ul>
           <li>
             <div className="chart-box">
-              <h3>Room</h3>
+              <h3>{stringTable[lang].room}</h3>
               <Chart id="chart1" value="80, 100" type="type-room" current={40} total={50} />
             </div>
           </li>
           <li>
             <div className="chart-box">
-              <h3>Bay</h3>
+              <h3>{stringTable[lang].bay}</h3>
               <Chart id="chart2" value="20, 100" type="type-bay" current={10} total={50} />
             </div>
           </li>
           <li>
             <div className="count-box">
-              <h3>Service ending soon</h3>
+              <h3>{stringTable[lang].soon}</h3>
               <div className="row">
-                <h4>Room</h4>
+                <h4>{stringTable[lang].room}</h4>
                 <div className="count">
                   6
-                  <span className="addon">case(s)</span>
+                  <span className="addon">{stringTable[lang].cases}</span>
                 </div>
               </div>
               <div className="row">
-                <h4>Bay</h4>
+                <h4>{stringTable[lang].bay}</h4>
                 <div className="count">
                   6
-                  <span className="addon">case(s)</span>
+                  <span className="addon">{stringTable[lang].cases}</span>
                 </div>
               </div>
             </div>
           </li>
           <li>
             <div className="count-box">
-              <h3>Device Error</h3>
+              <h3>{stringTable[lang].deviceError}</h3>
               <div className="row">
-                <h4>Room</h4>
+                <h4>{stringTable[lang].room}</h4>
                 <div className="count">
                   6 
-                  <span className="addon">case(s)</span>
+                  <span className="addon">{stringTable[lang].cases}</span>
                 </div>
               </div>
               <div className="row">
-                <h4>Bay</h4>
+                <h4>{stringTable[lang].bay}</h4>
                 <div className="count">
                   6 
-                  <span className="addon">case(s)</span>
+                  <span className="addon">{stringTable[lang].cases}</span>
                 </div>
               </div>
             </div>
@@ -78,17 +81,17 @@ const Dashboard = () => {
       <div className="control-bar">
         <div className="tab">
           <ul>
-            <li className="active"><a href="">Room</a></li>
-            <li><a href="">Bay</a></li>
+            <li className="active"><a href="">{stringTable[lang].room}</a></li>
+            <li><a href="">{stringTable[lang].bay}</a></li>
           </ul>
           <div className="guide">
             <span className="icon">!</span>
-            <span className="layer">Device error</span>
+            <span className="layer">{stringTable[lang].deviceError}</span>
           </div>
         </div>
         <ul className="status">
-          <li className="active"><a href="">by Room</a></li>
-          <li><a href="">by Device Error</a></li>
+          <li className="active"><a href="">{stringTable[lang].byRoom}</a></li>
+          <li><a href="">{stringTable[lang].byError}</a></li>
         </ul>
         <ul className="display">
           <li className={`type-list ${activeDisplayType === 'list' ? 'active' : ''}`} onClick={() => handleDisplayClick('list')}></li>

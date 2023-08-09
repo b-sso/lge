@@ -330,10 +330,10 @@ h2 {
 /* -- robot */
 .widget-robot {
   height: 230px;
-  background: #fff;
+  background: var(--primary-bg-color);
   border-radius: 14px;
   padding: 18px 20px 20px;
-  border: 1px solid #fff;
+  border: 1px solid var(--primary-bg-color);
 }
 .widget-robot h3 {
   padding-top: 32px;
@@ -344,6 +344,7 @@ h2 {
   overflow: hidden;
   font-size: 14px;
   font-weight: 500;
+  color: var(--black-to-white);
 }
 .widget-robot h4 {
   font-size: 14px;
@@ -370,7 +371,7 @@ h2 {
   font-size: 11px;
   font-weight: 500;
   margin-right: 3px;
-  color: #000;
+  color: var(--black-to-white);
 }
 .widget-robot .top .battery .icon {
   width: 20px;
@@ -397,12 +398,12 @@ h2 {
 .widget-robot .status .spot {
   font-size: 18px;
   font-weight: 600;
-  color: #000;
+  color: var(--black-to-white);
 }
 .widget-robot .status .spot .addon {
   font-size: 14px;
   font-weight: 500;
-  color: #000;
+  color: var(--black-to-white);
   display: inline-block;
   vertical-align: top;
   margin: 2px 5px 0 0;
@@ -456,6 +457,16 @@ h2 {
   position: absolute;
   right: 17px;
   top: -10px;
+}
+/* -- dark */
+.column-global.mode-dark .widget-robot .move .btn-move {
+  background-color: #34343e;
+}
+.column-global.mode-dark .comm-robot .link-control {
+  background-color: #34343e;
+}
+.column-global.mode-dark .comm-robot .content li .status .current {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* 오른쪽 common area */
@@ -606,6 +617,7 @@ h2 {
 .comm-robot .count {
   font-size: 30px;
   font-weight: 600;
+  color: var(--black-to-white);
 }
 .comm-robot .content ul {
   display: flex;
@@ -629,6 +641,7 @@ h2 {
   transform: translateX(-50%);
   font-size: 12px;
   top: 10px;
+  color: var(--black-to-white);
 }
 .comm-robot .content li .status {
   display: table-cell;
@@ -805,7 +818,7 @@ h2 {
 }
 #page-dashboard .sec-status .count-box .count {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 500;
   white-space: nowrap;
   flex: 0 0 70px;
   text-align: right;

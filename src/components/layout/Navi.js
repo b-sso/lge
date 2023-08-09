@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import stringTable, { useLanguage } from '../../Lang';
 
 const Navi = () => {
+  const { lang } = useLanguage();
+
 	const [isLocationOpen, setIsLocationOpen] = useState(false);
   const locationList = ['Location 01', 'Location 02', 'Location 03'];
 	const [selectedLocation, setSelectedLocation] = useState(locationList[0]);
@@ -32,16 +35,16 @@ const Navi = () => {
 			<div className="menu">
 				<ul>
 					<li class="monitoring">
-						<NavLink to="/"><span>Monitoring</span></NavLink>
+						<NavLink to="/"><span>{stringTable[lang].monitoring}</span></NavLink>
 					</li>
 					<li class="alarm">
-						<NavLink to="/alarm"><span>Alarm</span></NavLink>
+						<NavLink to="/alarm"><span>{stringTable[lang].alarm}</span></NavLink>
 					</li>
 				</ul>
 			</div>
 			<div className="etc">
-				<a href="/setting" className="link-setting">Setting</a>
-				<a href="" className="link-logout">Logout</a>
+				<a href="/setting" className="link-setting">{stringTable[lang].setting}</a>
+				<a href="" className="link-logout">{stringTable[lang].logout}</a>
 			</div>
 		</nav>
   );
