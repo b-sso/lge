@@ -1,16 +1,19 @@
 import WidgetRobot from '../components/widget/Robot';
+import stringTable, { useLanguage } from '../Lang';
 
 const Robots = () => {
+  const { lang } = useLanguage();
+
   return (
   <div id="page-robots">
-    <h2>Robots</h2>
+    <h2>{stringTable[lang].titleRobot}</h2>
     <section>
       <div className="menu">
         <ul>
-          <li className="active"><a href="">All<span className="count">00</span></a></li>
-          <li><a href="">In Use<span className="count">00</span></a></li>
-          <li><a href="">Charging<span className="count">00</span></a></li>
-          <li><a href="">Check<span className="count">00</span></a></li>
+          <li className="active"><a href="">{stringTable[lang].all}<span className="count">00</span></a></li>
+          <li><a href="">{stringTable[lang].robotUse}<span className="count">00</span></a></li>
+          <li><a href="">{stringTable[lang].robotCharging}<span className="count">00</span></a></li>
+          <li><a href="">{stringTable[lang].robotCheck}<span className="count">00</span></a></li>
         </ul>
       </div>
       <div className="list">
@@ -29,9 +32,6 @@ const Robots = () => {
           </li>
           <li>
             <WidgetRobot battery={100} type="standby" />
-          </li>
-          <li>
-            <WidgetRobot battery={100} type="waiting" />
           </li>
         </ul>
       </div>

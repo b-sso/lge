@@ -8,7 +8,7 @@ import Chart from "../components/Chart";
 
 const Dashboard = () => {
   const { lang } = useLanguage();
-
+  
   const [activeDisplayType, setActiveDisplayType] = useState('list');
   const handleDisplayClick = (item) => {
     setActiveDisplayType(item);
@@ -17,7 +17,7 @@ const Dashboard = () => {
   return (
   <div id="page-dashboard">
     <section className="sec-status">
-      <h2>{stringTable[lang].statusTitle}</h2>
+      <h2>{stringTable[lang].status}</h2>
       <div className="slider-wrap"> {/* FIXME: 4개 이상일 때 active 클래스가 추가되고 슬라이드 작동 <div className="slider-wrap active">*/}
         {/* FIXME: 클릭 시 이전으로, 마지막이면 end 클래스 추가 */}
         <a href="" className="btn-slider-prev end"></a>
@@ -36,7 +36,7 @@ const Dashboard = () => {
           </li>
           <li>
             <div className="count-box">
-              <h3>{stringTable[lang].soon}</h3>
+              <h3>{stringTable[lang].roomEnding}</h3>
               <div className="row">
                 <h4>{stringTable[lang].room}</h4>
                 <div className="count">
@@ -99,7 +99,10 @@ const Dashboard = () => {
           <li className={`type-dot ${activeDisplayType === 'dot' ? 'active' : ''}`} onClick={() => handleDisplayClick('dot')}></li>
         </ul>
         <select name="" className="comp-select">
-          <option value="">All</option>
+          <option value="">{stringTable[lang].all}</option>
+          <option value="">{stringTable[lang].checkIn}</option>
+          <option value="">{stringTable[lang].checkOut}</option>
+          <option value="">{stringTable[lang].hideRoom}</option>
         </select>
       </div>
       {activeDisplayType === 'list' && <DisplayList />}

@@ -1,9 +1,13 @@
+import stringTable, { useLanguage } from '../../Lang';
+
 const Golf = () => {
+  const { lang } = useLanguage();
+
 	return (
 		<div className="widget widget-golf">
 			<div className="title">
 				<span className="device-icon type-golf"></span>
-				<h3>Golf Simulator</h3>
+				<h3>{stringTable[lang].titleGold}</h3>
 				<div className="comp-chk">
 					<label>
 						<input type="checkbox" name="" /><span className="round"></span>

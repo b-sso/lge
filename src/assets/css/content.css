@@ -400,6 +400,10 @@ h2 {
   font-weight: 600;
   color: var(--black-to-white);
 }
+.widget-robot .status .spot .at {
+  display: flex;
+  align-items: center;
+}
 .widget-robot .status .spot .addon {
   font-size: 14px;
   font-weight: 500;
@@ -442,9 +446,6 @@ h2 {
 .widget-robot.error .spot {
   color: #ff2f2f;
 }
-.widget-robot.waiting .spot {
-  color: rgba(23, 183, 94, 0.4);
-}
 .widget-robot.error {
   border-color: #ff2f2f;
 }
@@ -458,14 +459,24 @@ h2 {
   right: 17px;
   top: -10px;
 }
+/* -- lang */
+.lang-ko .widget-robot .status .spot .num {
+  order: 1;
+}
+.lang-ko .widget-robot .status .spot .addon {
+  order: 2;
+  margin: 0 0 0 4px;
+}
+
+
 /* -- dark */
-.column-global.mode-dark .widget-robot .move .btn-move {
+.mode-dark .widget-robot .move .btn-move {
   background-color: #34343e;
 }
-.column-global.mode-dark .comm-robot .link-control {
+.mode-dark .comm-robot .link-control {
   background-color: #34343e;
 }
-.column-global.mode-dark .comm-robot .content li .status .current {
+.mode-dark .comm-robot .content li .status .current {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -555,10 +566,9 @@ h2 {
   top: 110px;
 }
 .comm-box .widget .content {
-  flex-basis: 100%;
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 205px;
+  flex: 0 0 205px;
 }
 .comm-box .widget .content .comp-range .bar {
   margin-bottom: -1px;
@@ -642,6 +652,7 @@ h2 {
   font-size: 12px;
   top: 10px;
   color: var(--black-to-white);
+  white-space: nowrap;
 }
 .comm-robot .content li .status {
   display: table-cell;
@@ -815,6 +826,7 @@ h2 {
   font-weight: 500;
   text-align: left;
   flex: 0 0 50px;
+  white-space: nowrap;
 }
 #page-dashboard .sec-status .count-box .count {
   font-size: 26px;
@@ -831,6 +843,10 @@ h2 {
   margin-left: 4px;
   display: inline-block;
   vertical-align: middle;
+}
+/* --lang */
+.lang-ko #page-dashboard .sec-status .count-box .row:before {
+  left: 40%;
 }
 
 /* -- common control bar */
@@ -1763,6 +1779,7 @@ h2 {
   font-size: 16px;
   font-weight: 500;
   color: #c2c4c5;
+  text-transform: capitalize;
 }
 #page-robots .menu li.active {
   color: #11121e;

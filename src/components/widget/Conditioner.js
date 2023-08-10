@@ -1,11 +1,14 @@
 import SetTemp from "../SetTemp";
+import stringTable, { useLanguage } from '../../Lang';
 
 const Conditioner = () => {
+  const { lang } = useLanguage();
+
 	return (
 		<div className="widget widget-conditioner">
 			<div className="title">
 				<span className="device-icon type-conditioner"></span>
-				<h3>Air Conditioner</h3>
+				<h3>{stringTable[lang].titleConditioner}</h3>
 				<div className="comp-chk">
 					<label>
 						<input type="checkbox" name="" /><span className="round"></span>
@@ -14,16 +17,26 @@ const Conditioner = () => {
 			</div>
 			<div className="content">
 				<SetTemp />
-				<div class="select-row">
-					<span class="label">Mode</span>
+				<div className="select-row">
+					<span className="label">{stringTable[lang].mode}</span>
 					<select name="" className="comp-select">
-						<option value="">Cool</option>
+						<option value="">{stringTable[lang].modeCool}</option>
+						<option value="">{stringTable[lang].modeAirDry}</option>
+						<option value="">{stringTable[lang].modeFan}</option>
+						<option value="">{stringTable[lang].modeAuto}</option>
+						<option value="">{stringTable[lang].modeAirClean}</option>
+						<option value="">{stringTable[lang].modeAroma}</option>
+						<option value="">{stringTable[lang].modeEnergySaving}</option>
 					</select>
 				</div>
-				<div class="select-row">
-					<span class="label">Speed</span>
+				<div className="select-row">
+					<span className="label">{stringTable[lang].speed}</span>
 					<select name="" className="comp-select">
-						<option value="">Auto</option>
+						<option value="">{stringTable[lang].modeAuto}</option>
+						<option value="">{stringTable[lang].modeSpeedLow}</option>
+						<option value="">{stringTable[lang].modeSpeedMiddle}</option>
+						<option value="">{stringTable[lang].modeSpeedHigh}</option>
+						<option value="">{stringTable[lang].modeSpeedTurbo}</option>
 					</select>
 				</div>
 			</div>

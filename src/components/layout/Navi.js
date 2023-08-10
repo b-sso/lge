@@ -34,16 +34,16 @@ const Navi = () => {
 			</div>
 			<div className="menu">
 				<ul>
-					<li class="monitoring">
+					<li className="monitoring">
 						<NavLink to="/"><span>{stringTable[lang].monitoring}</span></NavLink>
 					</li>
-					<li class="alarm">
+					<li className="alarm">
 						<NavLink to="/alarm"><span>{stringTable[lang].alarm}</span></NavLink>
 					</li>
 				</ul>
 			</div>
 			<div className="etc">
-				<a href="/setting" className="link-setting">{stringTable[lang].setting}</a>
+				<NavLink to="/setting" className="link-setting">{stringTable[lang].setting}</NavLink>
 				<a href="" className="link-logout">{stringTable[lang].logout}</a>
 			</div>
 		</nav>

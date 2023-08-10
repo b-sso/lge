@@ -1,9 +1,13 @@
+import stringTable, { useLanguage } from '../../Lang';
+
 const Purifier = () => {
+  const { lang } = useLanguage();
+
 	return (
 		<div className="widget widget-purifier">
 			<div className="title">
 				<span className="device-icon type-purifier"></span>
-				<h3>Air Purifier</h3>
+				<h3>{stringTable[lang].titlePurifier}</h3>
 				<div className="comp-chk">
 					<label>
 						<input type="checkbox" name="" /><span className="round"></span>
@@ -21,22 +25,39 @@ const Purifier = () => {
 					*/}
 					<span className="current type-good">GOOD</span>
 				</div>
-				<div class="select-row">
-					<span class="label">Mode</span>
+				<div className="select-row">
+					<span className="label">Mode</span>
 					<select name="" className="comp-select">
-						<option value="">Circulator</option>
+						<option value="">{stringTable[lang].modeClean}</option>
+						<option value="">{stringTable[lang].modeSleep}</option>
+						<option value="">{stringTable[lang].modeSlient}</option>
+						<option value="">{stringTable[lang].modeHumidity}</option>
+						<option value="">{stringTable[lang].modeCirculator}</option>
+						<option value="">{stringTable[lang].modeBaby}</option>
+						<option value="">{stringTable[lang].modeDual}</option>
+						<option value="">{stringTable[lang].modeAuto}</option>
+						<option value="">{stringTable[lang].modeFast}</option>
+						<option value="">{stringTable[lang].modeSmart}</option>
 					</select>
 				</div>
-				<div class="select-row">
-					<span class="label">Speed</span>
+				<div className="select-row">
+					<span className="label">Speed</span>
 					<select name="" className="comp-select">
-						<option value="">Low</option>
+						<option value="">{stringTable[lang].modeAuto}</option>
+						<option value="">{stringTable[lang].modeSpeedLow}</option>
+						<option value="">{stringTable[lang].modeSpeedMiddle}</option>
+						<option value="">{stringTable[lang].modeSpeedHigh}</option>
+						<option value="">{stringTable[lang].modeSpeedTurbo}</option>
 					</select>
 				</div>
-				<div class="select-row">
-					<span class="label">Boost Speed</span>
+				<div className="select-row">
+					<span className="label">Boost Speed</span>
 					<select name="" className="comp-select">
-						<option value="">Turbo</option>
+						<option value="">{stringTable[lang].modeAuto}</option>
+						<option value="">{stringTable[lang].modeSpeedLow}</option>
+						<option value="">{stringTable[lang].modeSpeedMiddle}</option>
+						<option value="">{stringTable[lang].modeSpeedHigh}</option>
+						<option value="">{stringTable[lang].modeSpeedTurbo}</option>
 					</select>
 				</div>
 			</div>

@@ -1,4 +1,7 @@
+import stringTable, { useLanguage } from '../../Lang';
+
 const Robot = ({ battery, type }) => {
+  const { lang } = useLanguage();
   const batteryStyle = {
     width: `${battery}%`,
   };
@@ -6,16 +9,13 @@ const Robot = ({ battery, type }) => {
   let status;
   switch (type) {
     case 'charging':
-      status = 'Charging';
+      status = stringTable[lang].robotStatusCharging;
       break;
     case 'standby':
-      status = 'Standby';
+      status = stringTable[lang].robotStatusStandby;
       break;
     case 'error':
-      status = 'Need to check';
-      break;
-    case 'waiting':
-      status = 'Waiting';
+      status = stringTable[lang].robotStatusError;
       break;
   }
 
@@ -31,25 +31,25 @@ const Robot = ({ battery, type }) => {
         <h3>robot's name</h3>
       </div>
       <div className="status">
-        <h4>Status</h4>
+        <h4>{stringTable[lang].robotStatus}</h4>
         <div className="spot">
           {(type === 'moving' || type === 'arrive') && (
-            <div>
-              {type === 'moving' && <span className="addon">Moving to</span>}
-              {type === 'arrive' && <span className="addon">Arrive at</span>}
-              <span className="num">Room 000</span>
+            <div className="at">
+              {type === 'moving' && <span className="addon">{stringTable[lang].robotStatusMoving}</span>}
+              {type === 'arrive' && <span className="addon">{stringTable[lang].robotStatusArrive}</span>}
+              <span className="num">{stringTable[lang].room} 000</span>
             </div>
           )}
           {status}
         </div>
       </div>
       <div className="move">
-        <h4>Select a Destination</h4>
+        <h4>{stringTable[lang].robotMoveGo}</h4>
         <div className="go">
-          <select name="" class="comp-select">
-            <option value="">Room 000</option>
+          <select name="" className="comp-select">
+            <option value="">{stringTable[lang].room} 000</option>
           </select>
-          <a href="" className="btn-move">Move</a>
+          <a href="" className="btn-move">{stringTable[lang].robotMove}</a>
         </div>
       </div>
     </div>
