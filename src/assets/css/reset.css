@@ -122,10 +122,3 @@ iframe {
 	vertical-align: top;
 	border: 0;
 }
-
-/* placeholder */
-input::placeholder,
-textarea::placeholder {
-  color: #c2c4c5;
-	font-weight: 300;
-}

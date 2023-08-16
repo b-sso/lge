@@ -19,6 +19,7 @@ const Login = () => {
           {stringTable[lang].loginGuide}<br />
           {stringTable[lang].loginGuide2} <a href="mailto:lgeadmin@lge.co.kr">lgeadmin@lge.co.kr</a>
         </div>
+        {/* FIXME: 아무것도 입력 안하면 disabled <button type="submit" className="btn-login" disabled> */}
         <button type="submit" className="btn-login">{stringTable[lang].login}</button>
       </div>
     </form>

@@ -19,19 +19,21 @@ const Styler = () => {
 					<a href="" className="btn-play"></a>
 					<a href="" className="btn-pause"></a>
 				</div>
-				<div className="select-row">
-					<span className="label">Styling Mode</span>
-					<select name="" className="comp-select">
-						<option value="">Special Care</option>
-					</select>
-				</div>
 				<div className="status">
-					<h4>Current State</h4>
-					<span className="current">Drying</span>
+					<h4>{stringTable[lang].stylerStatusTitle}</h4>
+					{/* FIXME: 
+						<span className="current">{stringTable[lang].stylerStatusPause}</span>
+						<span className="current">{stringTable[lang].stylerStatusEnd}</span>
+						<span className="current">{stringTable[lang].stylerStatusError}</span>
+						<span className="current">{stringTable[lang].stylerStatusNightDry}</span>
+						<span className="current">{stringTable[lang].stylerStatusSteam}</span>
+						<span className="current">{stringTable[lang].stylerStatusSterilize}</span>
+					*/}
+					<span className="current">{stringTable[lang].stylerStatusDrying}</span>
 				</div>
 				<div className="time">
-					<span className="addon">End Time</span>
-					<p>14:32</p>
+					<h4>{stringTable[lang].stylerTimeTitle}</h4>
+					<div className="current">14:32</div>
 				</div>
 			</div>
 		</div>

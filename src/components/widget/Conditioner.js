@@ -18,7 +18,7 @@ const Conditioner = () => {
 			<div className="content">
 				<SetTemp />
 				<div className="select-row">
-					<span className="label">{stringTable[lang].mode}</span>
+					<span className="label">{stringTable[lang].labelMode}</span>
 					<select name="" className="comp-select">
 						<option value="">{stringTable[lang].modeCool}</option>
 						<option value="">{stringTable[lang].modeAirDry}</option>
@@ -30,7 +30,7 @@ const Conditioner = () => {
 					</select>
 				</div>
 				<div className="select-row">
-					<span className="label">{stringTable[lang].speed}</span>
+					<span className="label">{stringTable[lang].labelSpeed}</span>
 					<select name="" className="comp-select">
 						<option value="">{stringTable[lang].modeAuto}</option>
 						<option value="">{stringTable[lang].modeSpeedLow}</option>

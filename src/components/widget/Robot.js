@@ -17,6 +17,9 @@ const Robot = ({ battery, type }) => {
     case 'error':
       status = stringTable[lang].robotStatusError;
       break;
+    case 'return':
+      status = stringTable[lang].robotStatusReturn;
+      break;
   }
 
   return (
@@ -48,6 +51,9 @@ const Robot = ({ battery, type }) => {
         <div className="go">
           <select name="" className="comp-select">
             <option value="">{stringTable[lang].room} 000</option>
+            <option value="">{stringTable[lang].robotMoveStand}</option>
+            <option value="">{stringTable[lang].robotMoveCharging}</option>
+            <option value="">{stringTable[lang].robotMoveReturn}</option>
           </select>
           <a href="" className="btn-move">{stringTable[lang].robotMove}</a>
         </div>

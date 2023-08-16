@@ -25,10 +25,10 @@ const DashboardList = () => {
         <div className="fold">
           <div className="left">
             <div className="btn-move"></div>
-            <div className="num">Room 000</div>
+            <div className="num">{stringTable[lang].room} 000</div>
             <div className="use">
               <div className={`comp-onoff ${isBundleWork ? 'checked' : ''}`}>
-                <label data-off={`${stringTable[lang].toggleOut}`} data-on={`${stringTable[lang].toggleIn}`}>
+                <label data-off={`${stringTable[lang].checkOut}`} data-on={`${stringTable[lang].checkIn}`}>
                   <input type="checkbox" name="" checked={isBundleWork} onChange={handleChkClick} />
                   <span className="round"></span>
                 </label>
@@ -48,7 +48,7 @@ const DashboardList = () => {
             </div>
           </div>
           <div className="right">
-            <div className="time"><span className="addon">Time</span>00:00:00</div> {/* FIXME: 5분 이하 남았을 경우 on 추가 <div className="time on"> */}
+            <div className="time"><span className="addon">{stringTable[lang].limitTime}</span>00:00:00</div> {/* FIXME: 5분 이하 남았을 경우 on 추가 <div className="time on"> */}
             <div className="btn-hide"></div> {/* FIXME: 숨김상태면 on 추가 <div className="btn-hide on">*/}
           </div>
           <span className="btn-toggle" onClick={() => setIsBundleOpen(!isBundleOpen)}></span>

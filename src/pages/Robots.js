@@ -33,6 +33,9 @@ const Robots = () => {
           <li>
             <WidgetRobot battery={100} type="standby" />
           </li>
+          <li>
+            <WidgetRobot battery={100} type="return" />
+          </li>
         </ul>
       </div>
     </section>

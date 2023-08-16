@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import stringTable, { useLanguage } from '../../Lang';
 
 import WidgetProjector from '../../components/widget/Projector';
 import WidgetDisplay from '../../components/widget/Display';
@@ -9,6 +10,7 @@ import WidgetGolf from '../../components/widget/Golf';
 import WidgetStyler from '../../components/widget/Styler';
 
 const DashboardCard = () => {
+  const { lang } = useLanguage();
   const bundle = useRef(null);
 
 	const [isBundleWork, setIsBundleWork] = useState(false);
@@ -32,17 +34,17 @@ const DashboardCard = () => {
   <div className="dashboard-card">
     <ul>
       <li className={`bundle ${isBundleWork ? 'status-in' : 'status-out'}`} ref={bundle}>
-        <span className="num">Room 000</span>
+        <span className="num">{stringTable[lang].room} 000</span>
         {isOpenWidget && ( <span className="btn-back" onClick={handleBackClick}></span> )}
         <div className="fold">
           <div className="time-bar">
             <div className={`comp-onoff ${isBundleWork ? 'checked' : ''}`}>
-              <label data-off="out" data-on="in">
+              <label data-off={`${stringTable[lang].checkOut}`} data-on={`${stringTable[lang].checkIn}`}>
                 <input type="checkbox" name="" checked={isBundleWork} onChange={handleChkClick} />
                 <span className="round"></span>
               </label>
             </div>
-            <div className="time"><span className="addon">Time</span>00:00:00</div> {/* FIXME: 5분 이하 남았을 경우 on 추가 <div className="time on"> */}
+            <div className="time"><span className="addon">{stringTable[lang].limitTime}</span>00:00:00</div> {/* FIXME: 5분 이하 남았을 경우 on 추가 <div className="time on"> */}
             <div className="btn-hide"></div> {/* FIXME: 숨김상태면 on 추가 <div className="btn-hide on">*/}
           </div>
           <div className="scroll">

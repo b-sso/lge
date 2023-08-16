@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 export const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState('ko');
+  const [lang, setLang] = useState('en');
   const handleLangChange = (selected) => {
     setLang(selected);
   };
@@ -44,13 +44,19 @@ const stringTable = {
     byRoom: 'by Room',
     byError: 'by Device Error',
     all: 'All',
-    checkIn: 'Check-In',
-    checkOut: 'Check-Out',
+    arrayCheckIn: 'Check-In',
+    arrayCheckOut: 'Check-Out',
+    checkIn: 'In',
+    checkOut: 'Out',
     hideRoom: 'Hidden Room(or Bay)',
+    limitTime: 'Time',
+    rangeVol: 'Volume',
+    rangeBright: 'Brightness',
+    start: 'Start',
+    stop: 'Stop',
 
     // comm
     commTitle: 'Common area',
-
 
     // login
     loginMailPlace: 'Please enter your email address',
@@ -88,6 +94,9 @@ const stringTable = {
     labelMode: 'Mode',
     labelSpeed: 'Speed',
     labelBoostSpeed: 'Boost Speed',
+    labelPicMode: 'Picture Mode',
+    labelInput: 'Input',
+    labelSoundMode: 'Sound Mode',
     titleConditioner: 'Air Conditioner',
     titlePurifier: 'Air Purifier',
     titleStyler: 'Styler',
@@ -108,9 +117,13 @@ const stringTable = {
     robotStatusError: 'Need to check',
     robotStatusMoving: 'Moving to',
     robotStatusArrive: 'Arrive at',
+    robotStatusReturn: 'Returning',
     robotMove: 'Move',
     robotMoveGo: 'Select a Destination',
-    
+    robotMoveStand: 'Standby Location',
+    robotMoveCharging: 'Standby Charging',
+    robotMoveReturn: 'Return Place',
+
     // mode
     modeAuto: 'Auto',
 
@@ -157,6 +170,25 @@ const stringTable = {
     modeSoundMusic: 'Music',
     modeSoundGame: 'Game',
 
+    purifierStatus: 'Overall Air Quaility',
+    purifierStatusGood: 'GOOD',
+    purifierStatusNormal: 'NORMAL',
+    purifierStatusBad: 'BAD',
+    purifierStatusWorst: 'VERY BAD',
+
+    golfControlTitle: 'Golf Simulator Program',
+    golfTimeTitle: 'Game Time',
+
+    stylerStatusTitle: 'Current State',
+    stylerStatusDrying: 'DRYING',
+    stylerStatusPause: 'PAUSE',
+    stylerStatusEnd: 'RUNNING END',
+    stylerStatusError: 'ERROR',
+    stylerStatusNight: 'NIGHT DRY',
+    stylerStatusSteam: 'STEAM',
+    stylerStatusSterilize: 'STERILIZE',
+    stylerTimeTitle: 'End Time'
+
   },
   ko: {
     // navi
@@ -183,7 +215,14 @@ const stringTable = {
     all: '전체',
     checkIn: '입실',
     checkOut: '퇴실',
+    arrayCheckIn: '입실',
+    arrayCheckOut: '퇴실',
     hideRoom: '숨김 룸(or 타석)',
+    limitTime: '남은 시간',
+    rangeVol: '볼륨',
+    rangeBright: '밝기',
+    start: '시작',
+    stop: '종료',
 
     // comm
     commTitle: '공용부',
@@ -200,6 +239,10 @@ const stringTable = {
     robotStatusError: '점검 필요',
     robotStatusMoving: '이동 중',
     robotStatusArrive: '도착',
+    robotStatusReturn: '복귀 중',
+    robotMoveStand: '대기 장소',
+    robotMoveCharging: '충전 장소',
+    robotMoveReturn: '복귀 장소',
 
     // login
     loginMailPlace: '메일주소를 입력하세요',
@@ -227,7 +270,7 @@ const stringTable = {
     roomLabelCreated: '등록일',
     roomLabelEdit: '수정',
     roomLabelDelete: '삭제',
-    roomLabelOk: '완료',
+    roomLabelOk: '저장',
     robotMove: '이동',
     robotMoveGo: '목적지',
 
@@ -235,7 +278,12 @@ const stringTable = {
     setTemp: '희망 온도',
     currentTemp: '현재 온도',
     setDimming: '밝기',
-
+    labelMode: '모드',
+    labelSpeed: '바람세기',
+    labelBoostSpeed: '부스트 제어',
+    labelPicMode: '화면 모드',
+    labelInput: '입력',
+    labelSoundMode: '사운드 모드',
     titleConditioner: '에어컨',
     titlePurifier: '공기청정기',
     titleStyler: '스타일러',
@@ -289,6 +337,25 @@ const stringTable = {
     modeSoundSports: '스포츠',
     modeSoundMusic: '음악',
     modeSoundGame: '게임',
+
+    purifierStatus: '현재 공기질 상태',
+    purifierStatusGood: '좋음',
+    purifierStatusNormal: '보통',
+    purifierStatusBad: '나쁨',
+    purifierStatusWorst: '매우 나쁨',
+  
+    golfControlTitle: 'GS 프로그램',
+    golfTimeTitle: '경기 시간',
+
+    stylerStatusTitle: 'Current State',
+    stylerStatusDrying: '건조',
+    stylerStatusPause: '일시정지',
+    stylerStatusEnd: '완료',
+    stylerStatusError: '에러',
+    stylerStatusNight: '보관 중',
+    stylerStatusSteam: '스팀',
+    stylerStatusSterilize: '살균',
+    stylerTimeTitle: '남은 시간'
   }
 };
 

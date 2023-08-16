@@ -16,6 +16,9 @@ const Dashboard = () => {
 
   return (
   <div id="page-dashboard">
+    <div className="column-content">
+      
+    </div>
     <section className="sec-status">
       <h2>{stringTable[lang].status}</h2>
       <div className="slider-wrap"> {/* FIXME: 4개 이상일 때 active 클래스가 추가되고 슬라이드 작동 <div className="slider-wrap active">*/}
@@ -100,8 +103,8 @@ const Dashboard = () => {
         </ul>
         <select name="" className="comp-select">
           <option value="">{stringTable[lang].all}</option>
-          <option value="">{stringTable[lang].checkIn}</option>
-          <option value="">{stringTable[lang].checkOut}</option>
+          <option value="">{stringTable[lang].arrayCheckIn}</option>
+          <option value="">{stringTable[lang].arrayCheckOut}</option>
           <option value="">{stringTable[lang].hideRoom}</option>
         </select>
       </div>

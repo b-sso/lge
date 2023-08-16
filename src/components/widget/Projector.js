@@ -33,10 +33,10 @@ const Projector = () => {
 				</div>
 			</div>
 			<div className="content">
-				<Range type="type-vol" title="Volume" value={volRange} handleChange={handleRangeChange} disabled={!isDeviceWork} />
-				<Range type="type-bright" title="Brightness" value={brightRange} handleChange={handleRangeChange} disabled={!isDeviceWork} />
+				<Range type="type-vol" title={stringTable[lang].rangeVol} value={volRange} handleChange={handleRangeChange} disabled={!isDeviceWork} />
+				<Range type="type-bright" title={stringTable[lang].rangeBright} value={brightRange} handleChange={handleRangeChange} disabled={!isDeviceWork} />
 				<div className="select-row">
-					<span className="label">Picture Mode</span>
+					<span className="label">{stringTable[lang].labelPicMode}</span>
 					<select name="" className="comp-select" disabled={!isDeviceWork}>
 						<option value="">{stringTable[lang].modePicMall}</option>
 						<option value="">{stringTable[lang].modePicGeneral}</option>
@@ -49,7 +49,7 @@ const Projector = () => {
 					</select>
 				</div>
 				<div className="select-row">
-					<span className="label">Sound Mode</span>
+					<span className="label">{stringTable[lang].labelSoundMode}</span>
 					<select name="" className="comp-select" disabled={!isDeviceWork}>
 						<option value="">{stringTable[lang].modeSoundStandard}</option>
 						<option value="">{stringTable[lang].modeSoundCinema}</option>
@@ -60,7 +60,7 @@ const Projector = () => {
 					</select>
 				</div>
 				<div className="select-row">
-					<span className="label">Input</span>
+					<span className="label">{stringTable[lang].labelInput}</span>
 					<select name="" className="comp-select" disabled={!isDeviceWork}>
 						<option value="">{stringTable[lang].modeInputHdmi1}</option>
 						<option value="">{stringTable[lang].modeInputHdmi2}</option>

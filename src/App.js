@@ -11,13 +11,14 @@ import Robots from './pages/Robots';
 import Login from './pages/Login';
 
 function App() {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark');
   const handleModeChange = (selected) => {
     setMode(selected);
   };
 
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
+  const isDashboardPage = location.pathname === '/';
   return (
     <LanguageProvider>
       <div className={`column-global ${mode === 'light' ? 'mode-light' : 'mode-dark'}`}>
@@ -29,7 +30,7 @@ function App() {
             <Navi />
           </div>
           <Header />
-          <div className="column-content">
+          <div className={`${isDashboardPage ? 'column-content-wrap' : 'column-content'}`}>
             <main>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
@@ -38,7 +39,10 @@ function App() {
               </Routes>
             </main>
           </div>
-          <Comm />
+          {isDashboardPage ? (
+            <Comm />
+            ) : ('')
+          }
         </>
         )}
       </div>
@@ -47,3 +51,4 @@ function App() {
 }
 
 export default App;
+

@@ -16,17 +16,17 @@ const Purifier = () => {
 			</div>
 			<div className="content">
 				<div className="status">
-					<h4>Overall Air Quaility</h4>
+					<h4>{stringTable[lang].purifierStatus}</h4>
 					{/* FIXME: 상태에 따라 클래스 및 텍스트 변경
-						* good : <span className="current type-good">GOOD</span>
-						* normal : <span className="current type-normal">NORMAL</span>
-						* bad : <span className="current type-bad">BAD</span>
-						* worst : <span className="current type-worst">VERY BAD</span>
+						<span className="current type-good">{stringTable[lang].purifierStatusGood}</span>
+						<span className="current type-normal">{stringTable[lang].purifierStatusNormal}</span>
+						<span className="current type-bad">{stringTable[lang].purifierStatusBad}</span>
+						<span className="current type-worst">{stringTable[lang].purifierStatusWorst}</span>
 					*/}
-					<span className="current type-good">GOOD</span>
+					<span className="current type-good">{stringTable[lang].purifierStatusGood}</span>
 				</div>
 				<div className="select-row">
-					<span className="label">Mode</span>
+					<span className="label">{stringTable[lang].labelMode}</span>
 					<select name="" className="comp-select">
 						<option value="">{stringTable[lang].modeClean}</option>
 						<option value="">{stringTable[lang].modeSleep}</option>
@@ -41,7 +41,7 @@ const Purifier = () => {
 					</select>
 				</div>
 				<div className="select-row">
-					<span className="label">Speed</span>
+					<span className="label">{stringTable[lang].labelSpeed}</span>
 					<select name="" className="comp-select">
 						<option value="">{stringTable[lang].modeAuto}</option>
 						<option value="">{stringTable[lang].modeSpeedLow}</option>
@@ -51,7 +51,7 @@ const Purifier = () => {
 					</select>
 				</div>
 				<div className="select-row">
-					<span className="label">Boost Speed</span>
+					<span className="label">{stringTable[lang].labelBoostSpeed}</span>
 					<select name="" className="comp-select">
 						<option value="">{stringTable[lang].modeAuto}</option>
 						<option value="">{stringTable[lang].modeSpeedLow}</option>
