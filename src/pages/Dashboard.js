@@ -105,7 +105,8 @@ const Dashboard = () => {
           <option value="">{stringTable[lang].all}</option>
           <option value="">{stringTable[lang].arrayCheckIn}</option>
           <option value="">{stringTable[lang].arrayCheckOut}</option>
-          <option value="">{stringTable[lang].hideRoom}</option>
+          <option value="">{stringTable[lang].arrayHideRoom}</option>
+          <option value="">{stringTable[lang].arrayHideBay}</option>
         </select>
       </div>
       {activeDisplayType === 'list' && <DisplayList />}

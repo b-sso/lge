@@ -346,15 +346,18 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  background-position: 0 0;
+  background-position: left top;
   background-repeat: no-repeat;
-  background-image: url('../images/comp/light/range-vol-mute.png');
+  background-image: url('../images/comp/light/range-mute.png');
   right: 0;
   top: 3px;
   cursor: pointer;
 }
+.comp-range.type-vol .btn-mute.on {
+  background-position: left bottom;
+}
 .mode-dark .comp-range.type-vol .btn-mute {
-  background-image: url('../images/comp/dark/range-vol-mute.png');
+  background-image: url('../images/comp/dark/range-mute.png');
 }
 /* comp-chart */
 .comp-chart {

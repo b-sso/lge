@@ -11,7 +11,7 @@ import Robots from './pages/Robots';
 import Login from './pages/Login';
 
 function App() {
-  const [mode, setMode] = useState('dark');
+  const [mode, setMode] = useState('light');
   const handleModeChange = (selected) => {
     setMode(selected);
   };
