@@ -317,7 +317,7 @@ const stringTable = {
     titleProgress: '진행중',
     progressRetry: '재시도',
     progressClose: '닫기',
-    progressName: '이름',
+    progressName: '공간명',
     progressDevice: '기기',
     progressStatus: '상태',
     progressStatusFail: '실패',

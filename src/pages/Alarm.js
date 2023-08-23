@@ -12,7 +12,7 @@ const Alarm = () => {
           <li>
             <div className="inner">
               <div className="title">제목 노출 영역</div>
-              <div className="guide">
+              <div className="content">
                 내용 노출 영역
               </div>
             </div>
@@ -20,7 +20,7 @@ const Alarm = () => {
           <li>
             <div className="inner">
               <div className="title">제목 노출 영역</div>
-              <div className="guide">
+              <div className="content">
                 긴 내용이 들어갔을 때<br />
                 어떤 내용의 양이 들어갈 지 확정되지 않아서 <br />
                 길게 길게 스크롤로 처리<br />

@@ -2119,7 +2119,7 @@ h2 {
 }
 #page-alarm ul li .inner {
   background: var(--primary-bg-color);
-  padding: 25px 30px;
+  padding: 20px;
   border-radius: 10px;
 }
 #page-alarm ul li .title {
@@ -2128,14 +2128,11 @@ h2 {
   margin: 0 0 15px;
   color: var(--black-to-white);
 }
-#page-alarm ul li .guide {
+#page-alarm ul li .content {
   overflow: auto;
-  background: var(--second-bg-color);
-  padding: 15px 20px;
-  line-height: 20px;
+  line-height: 22px;
   word-break: keep-all;
-  min-height: 100px;
-  max-height: 200px;
+  height: 150px;
   color: var(--black-to-white);
   border-radius: 10px;
 }
