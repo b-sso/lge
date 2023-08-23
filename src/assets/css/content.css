@@ -56,17 +56,14 @@ h2 {
   padding: 10px 15px;
   text-align: left;
   background: #f3f3f3;
+  height: 40px;
+  padding: 0 15px;
 }
 .popup-layer .popup-content table th {
-  padding: 10px 15px;
-  height: 40px;
+  font-size: 16px;
 }
 .popup-layer .popup-content table td {
-  padding: 0 15px;
-  height: 40px;
-}
-.popup-layer .popup-content table.list tr:first-child td {
-  border-top: none;
+  font-size: 15px;
 }
 .popup-layer .popup-content table tr th:first-child,
 .popup-layer .popup-content table tr td:first-child {
@@ -79,7 +76,7 @@ h2 {
   border-top-right-radius: 10px;
 }
 .popup-layer .popup-content .scroll {
-  max-height: 321px;
+  max-height: 320px;
   overflow: auto;
 }
 .popup-layer .popup-content .device-icon {
@@ -93,11 +90,12 @@ h2 {
   text-align: center;
 }
 .popup-layer .popup-content .btn-bar .btn {
-  border-radius: 5px;
+  border-radius: 6px;
   height: 40px;
   line-height: 38px;
-  min-width: 100px;
+  min-width: 150px;
   margin: 0 5px;
+  font-size: 16px;
 }
 .popup-layer .popup-content .btn-bar .btn-retry {
   background: var(--black-to-white);
@@ -2111,8 +2109,7 @@ h2 {
   margin: 0 -5px 20px;
 }
 #page-alarm ul li {
-  align-items: center;
-  flex: 0 0 32%;
+  flex: 0 0 50%;
   padding-right: 5px;
   padding-left: 5px;
   margin-bottom: 14px;
@@ -2123,16 +2120,17 @@ h2 {
   border-radius: 10px;
 }
 #page-alarm ul li .title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   margin: 0 0 15px;
   color: var(--black-to-white);
 }
 #page-alarm ul li .content {
   overflow: auto;
-  line-height: 22px;
   word-break: keep-all;
   height: 150px;
   color: var(--black-to-white);
   border-radius: 10px;
+  font-size: 16px;
+  line-height: 24px;
 }

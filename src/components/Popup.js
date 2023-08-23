@@ -36,14 +36,9 @@ const Popup = ({ popupProgress }) => {
                   <td>{stringTable[lang].progressStatusFail}</td>
                 </tr>
                 <tr>
-                  <td>{stringTable[lang].room} 00</td>
+                  <td>{stringTable[lang].bay} 00</td>
                   <td><span className="device-icon type-projector on"></span>{stringTable[lang].titleProjector}</td>
                   <td>{stringTable[lang].progressStatusWaiting}</td>
-                </tr>
-                <tr>
-                  <td>{stringTable[lang].bay} 00</td>
-                  <td><span className="device-icon type-conditioner"></span>{stringTable[lang].titleConditioner}</td>
-                  <td>{stringTable[lang].progressStatusSuccess}</td>
                 </tr>
               </tbody>
             </table>
