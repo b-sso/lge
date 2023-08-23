@@ -1,6 +1,6 @@
 import stringTable, { useLanguage } from '../../Lang';
 
-const Header = () => {
+const Header = ({ popupProgress }) => {
   const { lang } = useLanguage();
 
 	return (
@@ -14,7 +14,7 @@ const Header = () => {
 			</div>
 			<div className="work">
 				<a href="" className="active">{stringTable[lang].goWork}</a>
-				<a href="" className="">{stringTable[lang].outWork}</a>
+				<a href="#" className="" onClick={popupProgress}>{stringTable[lang].outWork}</a>
 			</div>
 		</header>
   );

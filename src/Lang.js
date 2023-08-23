@@ -43,7 +43,7 @@ const stringTable = {
     arrayCheckOut: 'Check-Out',
     arrayHideRoom: 'Hidden Room',
     arrayHideBay: 'Hidden Bay',
-    heckIn: 'In',
+    checkIn: 'In',
     checkOut: 'Out',
     limitTime: 'Time',
     rangeVol: 'Volume',
@@ -162,7 +162,16 @@ const stringTable = {
     stylerStatusNight: 'NIGHT DRY',
     stylerStatusSteam: 'STEAM',
     stylerStatusSterilize: 'STERILIZE',
-    stylerTimeTitle: 'End Time'
+    stylerTimeTitle: 'End Time',
+    titleProgress: 'In Progress',
+    progressRetry: 'Retry',
+    progressClose: 'Close',
+    progressName: 'Space name',
+    progressDevice: 'Device',
+    progressStatus: 'Status',
+    progressStatusFail: 'Fail',
+    progressStatusWaiting: 'Waiting',
+    progressStatusSuccess: 'Success',
   },
   ko: {
     monitoring: '모니터링',
@@ -304,7 +313,16 @@ const stringTable = {
     stylerStatusNight: '보관 중',
     stylerStatusSteam: '스팀',
     stylerStatusSterilize: '살균',
-    stylerTimeTitle: '남은 시간'
+    stylerTimeTitle: '남은 시간',
+    titleProgress: '진행중',
+    progressRetry: '재시도',
+    progressClose: '닫기',
+    progressName: '이름',
+    progressDevice: '기기',
+    progressStatus: '상태',
+    progressStatusFail: '실패',
+    progressStatusWaiting: '대기중',
+    progressStatusSuccess: '성공',
   }
 };
 
